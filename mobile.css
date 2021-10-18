@@ -213,18 +213,15 @@
     border-radius: 0px;
     width: 150px;
   }
+  .tabbed {
+    height: initial;
+  }
   .images img {
     width: 47%;
     margin: 5px;
     /* border-radius: 20px; */
   }
-  .tabbed {
-    height: 500px;
-    overflow-y: scroll;
-  }
-  #section_3 {
-    height: 700px;
-  }
+
   .current {
     background-color: var(--red-light-color);
     transform: translateY(0rem);
@@ -254,4 +251,10 @@
     color: var(--text-color);
     cursor: pointer;
   }
+}
+.today__date {
+  color: #9d9d9d;
+}
+.cop {
+  color: #9d9d9d;
 }

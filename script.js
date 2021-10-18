@@ -13,6 +13,10 @@ const profil = document.querySelector('img[data-src]');
 const scrollTop = document.querySelector('.scrollTop');
 const menu = document.querySelector('.menu');
 const services = document.querySelectorAll('.service');
+const tabs = document.querySelector('.tabs');
+const pics = document.querySelector('.images');
+const yearDate = document.querySelector('.date_text');
+const current__date = document.querySelector('.today__date');
 
 //scrollTop
 scrollTop.addEventListener('click', () => {
@@ -185,20 +189,17 @@ services.forEach((service) => {
 
 //PORTFOLIO
 
-const tabs = document.querySelector('.tabs');
-const pics = document.querySelector('.images');
-
 const images = [
-  '<img src="./images/Image1.jpg" alt="image" class="imgs art" />',
-  '<img src="./images/Image2.jpg" alt="image" class="imgs art" />',
-  '<img src="./images/Image3.jpg" alt="image" class="imgs art" />',
-  '<img src="./images/Image4.jpg" alt="image" class="imgs art" />',
-  '<img src="./images/Image5.jpg" alt="image" class="imgs art" />',
-  '<img src="./images/Image6.jpg" alt="image" class="imgs art" />',
-  '<img src="./images/Logo1.jpg" alt="image" class="imgs logos" />',
-  '<img src="./images/Logo2.jpg" alt="image" class="imgs logos" />',
-  '<img src="./images/Logo3.jpg" alt="image" class="imgs logos" />',
-  '<img src="./images/poster1.jpg" alt="image" class="imgs poster" />',
+  '<img src="./images/Image1.jpg" alt="image" class="imgs   art" />',
+  '<img src="./images/Image2.jpg" alt="image" class="imgs  art" />',
+  '<img src="./images/Image3.jpg" alt="image" class="imgs  art" />',
+  '<img src="./images/Image4.jpg" alt="image" class="imgs  art" />',
+  '<img src="./images/Image5.jpg" alt="image" class="imgs  art" />',
+  '<img src="./images/Image6.jpg" alt="image" class="imgs  art" />',
+  '<img src="./images/Logo1.jpg" alt="image" class="imgs  logos" />',
+  '<img src="./images/Logo2.jpg" alt="image" class="imgs  logos" />',
+  '<img src="./images/Logo3.jpg" alt="image" class="imgs  logos" />',
+  '<img src="./images/poster1.jpg" alt="image" class="imgs  poster" />',
 ];
 
 tabs.addEventListener('click', (e) => {
@@ -206,7 +207,7 @@ tabs.addEventListener('click', (e) => {
   if (e.target.classList.contains('tab')) {
     const current = e.target;
     const others = current.closest('.tabs').querySelectorAll('.tab');
-    console.log(others);
+
     others.forEach((tab) => {
       if (tab !== current) {
         tab.classList.remove('current');
@@ -221,3 +222,20 @@ tabs.addEventListener('click', (e) => {
     pics.insertAdjacentHTML('afterbegin', html);
   }
 });
+
+//Dates
+setInterval(() => {
+  const newDate = new Date();
+  yearDate.textContent = newDate.getFullYear();
+  const worldDate = new Intl.DateTimeFormat(navigator.language, {
+    day: '2-digit',
+    year: 'numeric',
+    weekday: 'short',
+    month: 'long',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).format(newDate);
+
+  current__date.textContent = worldDate.replaceAll('/', '-');
+}, 1000);
