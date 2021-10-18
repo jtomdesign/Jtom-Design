@@ -127,7 +127,7 @@ const sectionsObserve = function (entries) {
 };
 const secObserver = new IntersectionObserver(sectionsObserve, {
   root: null,
-  threshold: 0.3,
+  threshold: 0.2,
 });
 sections.forEach((section) => {
   section.classList.add('section__reveal');
