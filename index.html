@@ -11,12 +11,16 @@
     <title>Jtom Design | Welcome</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="mobile.css" />
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
   </head>
   <body>
+    <div class="scrollTop scroll_hide">
+      <i class="fas fa-caret-up"></i>
+    </div>
     <nav class="nav">
       <div class="logo">JTOM <span class="text__primary">DESIGN</span></div>
-      <div class="nav__links">
+      <div class="nav__links hide">
         <div class="nav__item">
           <a href="#" data-tab="section_1" class="nav__link">About</a>
         </div>
@@ -26,17 +30,20 @@
         <div class="nav__item">
           <a href="#" data-tab="section_3" class="nav__link">Portfolio</a>
         </div>
+
         <div class="nav__item">
-          <a href="#" data-tab="section_4" class="nav__link">Blog</a>
+          <a href="#" data-tab="section_4" class="nav__link">Contact</a>
         </div>
-        <div class="nav__item">
-          <a href="#" data-tab="section_5" class="nav__link">Contact</a>
+        <div class="login">
+          <a href="#" class="btn nav__link">
+            <i class="fa fa-sign-in" aria-hidden="true"> </i> Login</a
+          >
         </div>
       </div>
-      <div class="login">
-        <a href="#" class="btn nav__link">
-          <i class="fa fa-sign-in" aria-hidden="true"> </i> Login</a
-        >
+      <div class="menu">
+        <div class="line line_1"></div>
+        <div class="line line_2"></div>
+        <div class="line line_3"></div>
       </div>
     </nav>
     <header class="header">
@@ -99,13 +106,40 @@
             />
           </div>
           <div class="about_text">
+            <h3 class="title-2">I'm Joel Jtom.</h3>
             <p class="para">
-              I'm Joel Jtom. I'm freelancer designer who codes, i care deeply
-              about creating world class, useful,and beautiful products that
-              help people and make a difference. i can be as involved in your
-              project as you need me to be; from the seed of the idea to
-              sketches, creative direction and even the front-end
+              I'm freelancer designer who codes, i care deeply about creating
+              world class, useful,and beautiful products that help people and
+              make a difference. i can be as involved in your project as you
+              need me to be; from the seed of the idea to sketches, creative
+              direction and even the front-end
             </p>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill skill__1">
+            <h1 class="percent ps__pts">
+              81<span class="percent_sign">%</span>
+            </h1>
+            <p class="para para-2">Photoshop</p>
+          </div>
+          <div class="skill skill__2">
+            <h1 class="percent html__pts">
+              84<span class="percent_sign">%</span>
+            </h1>
+            <p class="para para-2">Html</p>
+          </div>
+          <div class="skill skill__3">
+            <h1 class="percent css__pts">
+              80<span class="percent_sign">%</span>
+            </h1>
+            <p class="para para-2">Css</p>
+          </div>
+          <div class="skill skill__4">
+            <h1 class="percent js__pts">
+              78<span class="percent_sign">%</span>
+            </h1>
+            <p class="para para-2">Javascript</p>
           </div>
         </div>
       </div>
@@ -113,6 +147,30 @@
     <section id="section_2" class="section section_2">
       <div class="container">
         <h1 class="title">Services</h1>
+        <div class="services">
+          <div class="service service_1">
+            <div class="ico">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="service_name">Web design</div>
+          </div>
+          <div class="service service_2">
+            <div class="ico">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="service_name">Graphic design</div>
+          </div>
+          <div class="service service_3">
+            <div class="ico"><i class="fas fa-desktop"></i></div>
+            <div class="service_name">User Interface</div>
+          </div>
+          <div class="service service_4">
+            <div class="ico">
+              <i class="fas fa-shapes"></i>
+            </div>
+            <div class="service_name">Packaging</div>
+          </div>
+        </div>
       </div>
       <div class="socials">
         <a href="#"> <i class="fab icons fa-github" aria-hidden="true"></i></a>
@@ -127,6 +185,7 @@
         ></a>
       </div>
     </section>
+
     <section id="section_3" class="section section_3">
       <div class="socials">
         <a href="#"> <i class="fab icons fa-github" aria-hidden="true"></i></a>
@@ -142,26 +201,31 @@
       </div>
       <div class="container">
         <h1 class="title">Portfolio</h1>
+        <div class="tabbed">
+          <div class="tabs">
+            <button class="tab tabs_1 current" data-img="imgs">All</button>
+            <button class="tab tabs_2" data-img="poster">Poster</button>
+            <button class="tab tabs_3" data-img="logos">Logos</button>
+            <button class="tab tabs_4" data-img="web">Web site</button>
+            <button class="tab tabs_5" data-img="art">Digital Art</button>
+          </div>
+          <div class="images">
+            <img src="./images/Image1.jpg" alt="image" class="imgs art" />
+            <img src="./images/Image2.jpg" alt="image" class="imgs art" />
+            <img src="./images/Image3.jpg" alt="image" class="imgs art" />
+            <img src="./images/Image4.jpg" alt="image" class="imgs art" />
+            <img src="./images/Image5.jpg" alt="image" class="imgs art" />
+            <img src="./images/Image6.jpg" alt="image" class="imgs art" />
+            <img src="./images/Logo1.jpg" alt="image" class="imgs logos" />
+            <img src="./images/Logo2.jpg" alt="image" class="imgs logos" />
+            <img src="./images/Logo3.jpg" alt="image" class="imgs logos" />
+            <img src="./images/poster1.jpg" alt="image" class="imgs poster" />
+          </div>
+        </div>
       </div>
     </section>
-    <section id="section_4" class="section section_4">
-      <div class="container">
-        <h1 class="title">Blog</h1>
-      </div>
-      <div class="socials">
-        <a href="#"> <i class="fab icons fa-github" aria-hidden="true"></i></a>
-        <a href="#"
-          ><i class="fab icons fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="#">
-          <i class="fab icons fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="#">
-          <i class="fab icons fa-facebook" aria-hidden="true"></i
-        ></a>
-      </div>
-    </section>
-    <section id="section_5" class="section section_5">
+    <section class="section showcase__2"></section>
+    <section id="section_4" class="section section_5">
       <div class="socials">
         <a href="#"> <i class="fab icons fa-github" aria-hidden="true"></i></a>
         <a href="#"
@@ -176,6 +240,21 @@
       </div>
       <div class="container">
         <h1 class="title">Contact</h1>
+        <form class="form" action="">
+          <div class="forms name">
+            <label for="Full Name">Full Name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="forms email">
+            <label for="Email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="forms message">
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+          </div>
+          <input class="btn_2" type="submit" value="SEND" />
+        </form>
       </div>
     </section>
     <script src="./script.js"></script>

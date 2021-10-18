@@ -10,7 +10,17 @@ const section1 = document.querySelector('.section_1');
 const start = document.querySelector('.arrow__down');
 const sections = document.querySelectorAll('.section');
 const profil = document.querySelector('img[data-src]');
+const scrollTop = document.querySelector('.scrollTop');
+const menu = document.querySelector('.menu');
+const services = document.querySelectorAll('.service');
 
+//scrollTop
+scrollTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
 //hover
 const hoverEffect = function (e, color) {
   if (e.target.classList.contains('nav__link')) {
@@ -109,20 +119,11 @@ const sectionsObserve = function (entries) {
     });
 
     entry.target.classList.remove('section__reveal');
-  } else {
-    links.forEach((ele) => {
-      if (ele.dataset.tab === entry.target.getAttribute('id')) {
-        ele.classList.remove('isActive');
-      } else {
-        ele.classList.remove('isActive');
-      }
-    });
   }
 };
 const secObserver = new IntersectionObserver(sectionsObserve, {
   root: null,
-  threshold: 0.15,
-  rootMargin: '100px',
+  threshold: 0.3,
 });
 sections.forEach((section) => {
   section.classList.add('section__reveal');
@@ -133,9 +134,13 @@ sections.forEach((section) => {
 const trackHeader = function (entries, observer) {
   const [entry] = entries;
   if (!entry.isIntersecting) {
-    nav.style.backgroundColor = 'rgba(18, 18, 18, 0.9)';
+    scrollTop.classList.remove('scroll_hide');
+    nav.style.backgroundColor = 'rgba(18, 18, 18, 0.7)';
+    nav.style.backdropFilter = 'blur(10px)';
   } else {
     nav.style.backgroundColor = '';
+    nav.style.backdropFilter = 'blur(0)';
+    scrollTop.classList.add('scroll_hide');
   }
 };
 const observeHeader = new IntersectionObserver(trackHeader, {
@@ -159,4 +164,60 @@ const lazyObserve = new IntersectionObserver(lazyTrack, {
   root: null,
   threshold: 0,
 });
+
+//MOBILE NAV
 lazyObserve.observe(profil);
+menu.addEventListener('click', () => {
+  menu.classList.toggle('times');
+  navbar.classList.toggle('hide');
+});
+
+//SERVICES
+
+services.forEach((service) => {
+  service.addEventListener('mouseover', () => {
+    service.classList.add('hover_fx');
+  });
+  service.addEventListener('mouseout', () => {
+    service.classList.remove('hover_fx');
+  });
+});
+
+//PORTFOLIO
+
+const tabs = document.querySelector('.tabs');
+const pics = document.querySelector('.images');
+
+const images = [
+  '<img src="./images/Image1.jpg" alt="image" class="imgs art" />',
+  '<img src="./images/Image2.jpg" alt="image" class="imgs art" />',
+  '<img src="./images/Image3.jpg" alt="image" class="imgs art" />',
+  '<img src="./images/Image4.jpg" alt="image" class="imgs art" />',
+  '<img src="./images/Image5.jpg" alt="image" class="imgs art" />',
+  '<img src="./images/Image6.jpg" alt="image" class="imgs art" />',
+  '<img src="./images/Logo1.jpg" alt="image" class="imgs logos" />',
+  '<img src="./images/Logo2.jpg" alt="image" class="imgs logos" />',
+  '<img src="./images/Logo3.jpg" alt="image" class="imgs logos" />',
+  '<img src="./images/poster1.jpg" alt="image" class="imgs poster" />',
+];
+
+tabs.addEventListener('click', (e) => {
+  pics.textContent = '';
+  if (e.target.classList.contains('tab')) {
+    const current = e.target;
+    const others = current.closest('.tabs').querySelectorAll('.tab');
+    console.log(others);
+    others.forEach((tab) => {
+      if (tab !== current) {
+        tab.classList.remove('current');
+      } else {
+        current.classList.add('current');
+      }
+    });
+    const picture = images.filter((img) => {
+      return img.includes(e.target.dataset.img);
+    });
+    const html = picture.join(' ');
+    pics.insertAdjacentHTML('afterbegin', html);
+  }
+});
