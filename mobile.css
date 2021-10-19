@@ -246,6 +246,13 @@
   .tabbed {
     height: initial;
   }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
   .images img {
     width: 47%;
     margin: 5px;
