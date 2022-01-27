@@ -172,6 +172,7 @@ body {
   color: var(--red-light-color);
   text-transform: uppercase;
   font-size: 1.05rem;
+  margin: 10px;
 }
 .about {
   color: var(--text-color);
