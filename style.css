@@ -318,6 +318,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+/* .section_3 {
+  display: unset;
+
+  padding: 100px;
+} */
 .about_img {
   width: 18%;
   border-radius: 50%;
@@ -352,7 +357,7 @@ body {
   justify-content: space-around;
   align-items: center;
   padding-top: 80px;
-  width: 650px;
+  width: 700px;
   margin: auto;
 }
 .skill {
@@ -364,6 +369,7 @@ body {
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  margin: 10px;
 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   font-family: 'Bebas Neue', cursive;
@@ -550,9 +556,9 @@ body {
 /* .section_3 .socials {
   display: none;
 } */
-.tabbed {
+/* .tabbed {
   height: 70vh;
-}
+} */
 .imgs {
   transition: all 0.3s ease-in-out;
 }
