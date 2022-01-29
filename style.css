@@ -664,12 +664,10 @@ textarea:focus {
   text-align: center;
 }
 #map {
-  margin: 20px;
-  height: 500px;
-  width: 90%;
+  margin: 10px;
+  height: 450px;
+  width: 650px;
 }
 .contact__info {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
